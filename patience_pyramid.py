@@ -1,7 +1,7 @@
 from random import shuffle
 
 
-# class constructor
+# class factory
 class Card:
     def __init__(self, name, number, suit):
         self.name = name
@@ -9,7 +9,7 @@ class Card:
         self.suit = suit
 
 
-# class with methods
+# class with cards methods
 class NewCards:
 
     cardArr = []   # array with class Card instances
@@ -91,7 +91,7 @@ class NewCards:
 
                     if i.removed:  # card already used
 
-                        print("\nLine {}".format(i.line), "    ", end="   ")
+                        print("\nLine {}".format(i.line), " " * 21, end="   ")
 
                     elif i.blocked:  # card w/o value
 
@@ -105,7 +105,7 @@ class NewCards:
 
                     if i.removed:
 
-                        print("    ", end="   ")
+                        print(" " * 21, end="   ")
 
                     elif i.blocked:
 
@@ -157,7 +157,7 @@ class NewCards:
 
             if summed == 13:
 
-                print("Removed")
+                print("\nRemoved")
 
                 for i in range(len(do)):
 
@@ -179,7 +179,7 @@ class NewCards:
 
             else:
 
-                print("Dickhead!")
+                print("\nWrong!")
 
         elif do[0] == "next":
 
@@ -198,6 +198,10 @@ class NewCards:
         elif do[0] == "rules":
 
             Main.show_rules()
+
+        elif do[0] == "win":
+
+            cards[0].removed = True
 
         else:
 
